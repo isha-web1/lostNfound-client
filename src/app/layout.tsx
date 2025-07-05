@@ -5,7 +5,6 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { Navbar } from "@/src/components/navbar";
 import { fontSans } from "@/src/config/fonts";
 import { siteConfig } from "@/src/config/site";
 
@@ -42,8 +41,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          
-            {children}
+          {children}
         </Providers>
       </body>
     </html>
