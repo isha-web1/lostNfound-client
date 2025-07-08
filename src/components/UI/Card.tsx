@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable padding-line-between-statements */
 import { Card as HeroCard, CardHeader, CardBody, Image, CardFooter, Button } from "@heroui/react";
 import { format } from "date-fns";
