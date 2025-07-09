@@ -1,12 +1,12 @@
 import "@/src/styles/globals.css";
-
-import clsx from "clsx";
 import { Metadata, Viewport } from "next";
+import { Link } from "@heroui/link";
+import clsx from "clsx";
 
-import { Providers } from "./providers";
-
-import { fontSans } from "@/src/config/fonts";
 import { siteConfig } from "@/src/config/site";
+import { fontSans } from "@/src/config/fonts";
+import { Navbar } from "@/src/components/UI/navbar";
+import { Providers } from "../lib/Providers";
 
 export const metadata: Metadata = {
   title: {
@@ -36,7 +36,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
