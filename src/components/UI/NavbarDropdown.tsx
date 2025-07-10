@@ -1,19 +1,31 @@
 "use client";
 
-import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownItem} from "@heroui/dropdown";
-
-import { useRouter } from "next/navigation";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@heroui/dropdown";
+import { usePathname, useRouter } from "next/navigation";
 import { Avatar } from "@heroui/avatar";
+
 import { logout } from "@/src/services/AuthService";
 import { useUser } from "@/src/context/user.provider";
+import { protectedRoutes } from "../../../constant";
+
 
 export default function NavbarDropdown() {
   const router = useRouter();
+  const pathname = usePathname();
   const { user, setIsLoading: userLoading } = useUser();
 
   const handleLogout = () => {
     logout();
     userLoading(true);
+
+    if (protectedRoutes.some((route) => pathname.match(route))) {
+      router.push("/");
+    }
   };
 
   const handleNavigation = (pathname: string) => {
@@ -36,10 +48,10 @@ export default function NavbarDropdown() {
           Create Post
         </DropdownItem>
         <DropdownItem
-          onClick={() => handleLogout()}
           key="delete"
           className="text-danger"
           color="danger"
+          onClick={() => handleLogout()}
         >
           Logout
         </DropdownItem>
