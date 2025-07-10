@@ -22,6 +22,7 @@
     "@heroui/listbox": "2.3.21",
     "@heroui/navbar": "2.2.20",
     "@heroui/react": "^2.7.11",
+    "@heroui/select": "^2.4.22",
     "@heroui/skeleton": "^2.2.14",
     "@heroui/snippet": "2.2.23",
     "@heroui/spinner": "^2.2.19",
