@@ -23,6 +23,7 @@ import { useCreatePost } from "@/src/hooks/post.hook";
 import Loading from "@/src/components/UI/Loading";
 import { useRouter } from "next/navigation";
 import { useGetCategories } from "@/src/hooks/categories.hook";
+import Image from "next/image";
 
 const cityOptions = allDistict()
   .sort()
@@ -173,7 +174,7 @@ export default function CreatePost() {
                     key={imageDataUrl}
                     className="relative size-48 rounded-xl border-2 border-dashed border-default-300 p-2"
                   >
-                    <img
+                    <Image
                       alt="item"
                       className="h-full w-full object-cover object-center rounded-md"
                       src={imageDataUrl}
