@@ -13,15 +13,19 @@ import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { Button } from "@heroui/button";
+import { useRouter } from "next/navigation";
+
+import NavbarDropdown from "./NavbarDropdown";
+
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
-import { Logo } from "@/src/components/icons";
-import NavbarDropdown from "./NavbarDropdown";
 import { useUser } from "@/src/context/user.provider";
-import { Button } from "@heroui/button";
+import { Logo } from "@/src/assets/icons";
 
 export const Navbar = () => {
   const { user, isLoading } = useUser();
+  const router = useRouter();
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -38,7 +42,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "data-[active=true]:text-primary data-[active=true]:font-medium",
                 )}
                 color="foreground"
                 href={item.href}
@@ -63,7 +67,7 @@ export const Navbar = () => {
           </NavbarItem>
         ) : (
           <NavbarItem className="hidden sm:flex gap-2">
-           <Button> <Link href="/login" className="text-white">Login</Link></Button>
+            <Button onClick={() => router.push("/login")}>Login</Button>
           </NavbarItem>
         )}
       </NavbarContent>
@@ -82,8 +86,8 @@ export const Navbar = () => {
                   index === 2
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
+                      ? "danger"
+                      : "foreground"
                 }
                 href="#"
                 size="lg"
