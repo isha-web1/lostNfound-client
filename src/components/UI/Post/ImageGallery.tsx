@@ -30,7 +30,7 @@ export default function ImageGallery({ images }: IProps) {
           key={index}
           href={image}
         >
-          <Image
+          <img
             className="h-[400px] w-full object-cover"
             src={image}
             height={500}
