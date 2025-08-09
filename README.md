@@ -1,53 +1,49 @@
-# Next.js & HeroUI Template
+# lostNfound-client
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+**lostNfound-client** is a web application built to help users report, find, and claim lost and found items. It is designed as the front-end client for the lostNfound platform, providing an intuitive interface for users and administrators to interact with lost-and-found data.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contribution](#contribution)
+- [License](#license)
+
+---
+
+## Features
+
+- **User Authentication:** Secure login and session management using JWT.
+- **Post Lost/Found Items:** Users can report lost or found items (with images).
+- **Claim Requests:** Users can claim items or respond to items found by others.
+- **Role-Based Navigation:** Separate links and navigation for users and admins.
+- **Recent Posts:** View the most recently reported items.
+- **Search Functionality:** Integrates with MeiliSearch for fast searching.
+- **Responsive UI:** Built with HeroUI and Tailwind CSS for modern, responsive design.
+- **Error Handling:** Robust error handling and user feedback throughout the app.
+
+## Demo
+
+Visit the repository: [lostNfound-client on GitHub](https://github.com/isha-web1/lostNfound-client)
+
+---
 
 ## Technologies Used
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
+- [Next.js 14](https://nextjs.org/docs/getting-started) (App Directory)
 - [HeroUI v2](https://heroui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [Axios](https://axios-http.com/)
+- [MeiliSearch](https://www.meilisearch.com/) (for search)
+- [React Query](https://tanstack.com/query/latest) (for data fetching)
+- [React Hook Form](https://react-hook-form.com/) (for forms)
+- [Sonner](https://sonner.dev/) (for notifications)
 
-## How to Use
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
-
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+---
